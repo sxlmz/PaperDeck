@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#FFFFFF; }
+.band { position:absolute; left:0; top:200px; width:1280px; height:320px; background:#002060; }
+.band::before { content:""; position:absolute; left:0; top:0; width:1280px; height:4px; background:#F6D9A7; }
+.band::after { content:""; position:absolute; left:0; bottom:0; width:1280px; height:4px; background:#F6D9A7; }
+.part { position:absolute; left:0; top:275px; width:1280px; text-align:center;
+  font-size:20px; color:#FFFFFF; letter-spacing:4px; }
+.line-l { position:absolute; left:440px; top:287px; width:80px; height:2px; background:#FFFFFF; }
+.line-r { position:absolute; right:440px; top:287px; width:80px; height:2px; background:#FFFFFF; }
+.title { position:absolute; left:0; top:300px; width:1280px; text-align:center;
+  font-size:99px; font-weight:800; color:#F6D9A7; letter-spacing:6px; }
+.line-l2 { position:absolute; left:440px; top:430px; width:80px; height:2px; background:#FFFFFF; }
+.line-r2 { position:absolute; right:440px; top:430px; width:80px; height:2px; background:#FFFFFF; }
+.motto { position:absolute; left:257px; bottom:60px; width:765px;
+  font-size:14px; color:#64748B; text-align:center; letter-spacing:4px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="band"></div>
+  <div class="part">{{PART}}</div>
+  <div class="line-l"></div>
+  <div class="line-r"></div>
+  <div class="title">{{TITLE}}</div>
+  <div class="line-l2"></div>
+  <div class="line-r2"></div>
+  <div class="motto">—  艰苦创业  开拓创新  争创一流  —</div>
+</div>
+</body>
+</html>

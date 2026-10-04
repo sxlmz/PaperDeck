@@ -1,0 +1,21 @@
+# 密钥与本地配置（必须忽略）
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node（dom2pptx 依赖，进入目录后 npm ci 恢复）
+node_modules/
+
+# 运行产物与中间态（可重新生成；模板引擎与模板页必须入库）
+output/
+workspace/*
+!workspace/templates/
+
+# 编辑器
+.vscode/
+.idea/

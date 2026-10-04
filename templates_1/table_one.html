@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#F5F5F0; }
+.slide { position:relative; width:1280px; height:720px; background:#F5F5F0; }
+.kicker { position:absolute; left:60px; top:36px; font-size:14px; color:#64748B; letter-spacing:3px; white-space:nowrap; }
+.title { position:absolute; left:60px; top:60px; width:1160px; font-size:32px; font-weight:800; color:#0F172A; }
+.subtitle { position:absolute; left:60px; top:110px; width:1160px; font-size:19px; color:#64748B; font-style:italic; }
+.tcap { position:absolute; left:60px; top:145px; width:1160px; font-size:19px; color:#475569; }
+.table-wrap { position:absolute; left:60px; top:180px; width:1160px; }
+.trow { display:flex; padding:10px 12px; font-size:19px; font-family:'Times New Roman',serif; }
+.trow.head { border-top:2.5px solid #0F172A; border-bottom:1px solid #0F172A; font-weight:700; color:#0F172A; background:#F1F5F9; }
+.trow.cell { border-bottom:1px solid #E2E8F0; background:#FFFFFF; }
+.trow.last { border-bottom:2.5px solid #0F172A; }
+.tcol { flex:1; text-align:center; border-left:1px solid #E2E8F0; border-right:1px solid #E2E8F0; }
+.tcol:first-child { text-align:left; font-weight:600; }
+.tcol.num { font-family:'Times New Roman',serif; font-weight:700; color:#2563EB; }
+.cap { font-size:16px; color:#64748B; text-align:center; margin-top:8px; font-style:italic; }
+.summary { position:absolute; left:0; top:610px; width:1280px;
+  background:#FFFFFF; position:relative; padding: 14px 60px; }
+.summary .bar { position:absolute; left:0; top:0; width:4px; height:100%; background:#2563EB; }
+.summary .sd { font-size:19px; line-height:1.5; color:#1E293B; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="kicker">{{KICKER}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+  <div class="tcap">{{TCAP}}</div>
+  <div class="table-wrap">
+    <div class="trow head">{{HEAD_ROW}}</div>
+    {{ROWS}}
+    <div class="cap">{{CAPTION}}</div>
+  </div>
+  <div class="summary"><div class="bar"></div><div class="sd">{{SUMMARY}}</div></div>
+</div>
+</body>
+</html>

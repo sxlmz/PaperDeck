@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#FFFFFF; }
+.topbar { position:absolute; left:0; top:0; width:1280px; height:75px; background:#002060; }
+.topbar .sec { position:absolute; left:16px; top:12px; font-size:20px; font-weight:700; color:#FFFFFF; }
+.topbar .logo { position:absolute; right:35px; top:18px; width:168px; height:37px; background:#1E3A8A; border-radius:4px; }
+.bottombar { position:absolute; left:0; bottom:0; width:1280px; height:54px; background:#F1F5F9;
+  border-top:1px solid #E2E8F0; }
+.bottombar .logo { position:absolute; right:35px; bottom:8px; width:187px; height:38px; background:#CBD5E1; border-radius:4px; }
+.cols { position:absolute; left:25px; top:119px; right:25px; bottom:74px;
+  display:flex; gap:10px; }
+.col { flex:1; display:flex; flex-direction:column; }
+.col .hd { height:47px; background:#002060; color:#FFFFFF; font-size:20px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; }
+.col .card { flex:1; background:#FFFFFF; border:1px solid #E2E8F0; border-top:none;
+  padding:12px; display:flex; flex-direction:column; }
+.col .imgbox { flex:1; min-height:0; background:#F1F5F9; border-radius:6px; margin-bottom:10px;
+  display:flex; align-items:center; justify-content:center; }
+.col .desc { font-size:13px; line-height:1.5; color:#475569; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="topbar"><div class="sec">{{SECTION}}</div><div class="logo"></div></div>
+  <div class="cols">{{COLS}}</div>
+  <div class="bottombar"><div class="logo"></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#F5F5F0; }
+.slide { position:relative; width:1280px; height:720px; background:#F5F5F0; }
+.kicker { position:absolute; left:60px; top:50px; font-size:14px; color:#64748B; letter-spacing:3px; white-space:nowrap; }
+.title { position:absolute; left:60px; top:75px; width:1160px; font-size:44px; font-weight:800; color:#0F172A; white-space:nowrap; }
+.line { position:absolute; left:60px; top:140px; width:60px; height:4px; background:#2563EB; }
+.item { position:absolute; width:540px; padding-bottom:24px; border-bottom:1px solid #E2E8F0; }
+.item .no { font-size:52px; font-weight:800; line-height:1; display:inline-block; vertical-align:top; margin-right:20px; }
+.item .info { display:inline-block; vertical-align:top; width:440px; }
+.i1 { left:60px; top:260px; }
+.i2 { left:680px; top:260px; }
+.i3 { left:60px; top:440px; }
+.i4 { left:680px; top:440px; }
+.i1 .no { color:#2563EB; }
+.i2 .no { color:#16A34A; }
+.i3 .no { color:#EA580C; }
+.i4 .no { color:#64748B; }
+.item .info .t { font-size:22px; font-weight:800; color:#0F172A; margin-bottom:6px; }
+.item .info .d { font-size:16px; color:#64748B; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="kicker">Contents</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="line"></div>
+  <div class="item i1"><div class="no">01</div><div class="info"><div class="t">{{M1_TITLE}}</div><div class="d">{{M1_DESC}}</div></div></div>
+  <div class="item i2"><div class="no">02</div><div class="info"><div class="t">{{M2_TITLE}}</div><div class="d">{{M2_DESC}}</div></div></div>
+  <div class="item i3"><div class="no">03</div><div class="info"><div class="t">{{M3_TITLE}}</div><div class="d">{{M3_DESC}}</div></div></div>
+  <div class="item i4"><div class="no">04</div><div class="info"><div class="t">{{M4_TITLE}}</div><div class="d">{{M4_DESC}}</div></div></div>
+</div>
+</body>
+</html>

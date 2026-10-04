@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>目录</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#FFFFFF; }
+.side { position:absolute; left:0; top:0; width:420px; height:720px; background:#002060; }
+.side .label { position:absolute; left:150px; top:200px;
+  font-size:64px; font-weight:800; color:#FFFFFF; letter-spacing:8px;
+  writing-mode:vertical-rl; text-orientation:upright; }
+.side .line1 { position:absolute; left:160px; top:490px; width:100px; height:2px; background:#F6D9A7; }
+.side .en { position:absolute; left:160px; top:505px; font-size:14px; color:#F6D9A7; letter-spacing:3px; }
+.grid { position:absolute; left:480px; top:200px; width:740px;
+  display:grid; grid-template-columns:1fr 1fr; gap:60px 80px; }
+.mod { display:flex; align-items:center; gap:20px; }
+.mod .no { font-size:56px; font-weight:800; color:#002060; line-height:1; min-width:90px; }
+.mod .mt { font-size:42px; font-weight:700; color:#002060; }
+.motto { position:absolute; left:480px; bottom:60px; width:740px;
+  font-size:14px; color:#64748B; text-align:center; letter-spacing:4px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="side">
+    <div class="label">目 录</div>
+    <div class="line1"></div>
+    <div class="en">CONTENTS</div>
+  </div>
+  <div class="grid">{{MODULES}}</div>
+  <div class="motto">—  艰苦创业  开拓创新  争创一流  —</div>
+</div>
+</body>
+</html>

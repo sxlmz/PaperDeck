@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#FFFFFF; }
+.topbar { position:absolute; left:0; top:0; width:1280px; height:80px; background:#002060; }
+.topbar::after { content:""; position:absolute; left:0; bottom:0; width:1280px; height:3px; background:#F6D9A7; }
+.topbar .sec { position:absolute; left:40px; top:18px; font-size:42px; font-weight:800; color:#F6D9A7; }
+.topbar .logo { position:absolute; right:40px; top:22px; width:180px; height:40px;
+  background:#1E3A8A; border-radius:4px; }
+.body { position:absolute; left:60px; top:120px; width:1160px; bottom:60px;
+  font-size:36px; line-height:1.8; color:#002060; }
+.body .item { margin-bottom:24px; }
+.body .bullet { display:inline-block; width:14px; height:14px; background:#002060; margin-right:12px; vertical-align:middle; }
+.body b { color:#002060; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="topbar">
+    <div class="sec">{{SECTION}}</div>
+    <div class="logo"></div>
+  </div>
+  <div class="body">{{BODY}}</div>
+</div>
+</body>
+</html>

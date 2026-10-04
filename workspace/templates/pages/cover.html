@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#F5F5F0; }
+.slide { position:relative; width:1280px; height:720px; background:#F5F5F0; overflow:hidden; }
+.wave { position:absolute; right:0; bottom:0; width:100%; height:100%; opacity:0.18; }
+.line { position:absolute; left:120px; top:220px; width:60px; height:4px; background:#2563EB; }
+.venue { position:absolute; left:120px; top:250px; font-size:20px; color:#2563EB; font-weight:600; letter-spacing:1px; white-space:nowrap; }
+.title { position:absolute; left:120px; top:300px; width:1040px; font-size:44px; font-weight:800; color:#0F172A; }
+.subtitle { position:absolute; left:120px; top:440px; width:1000px; font-size:19px; color:#475569; }
+.note .bar, .summary .bar { position:absolute; left:0; top:0; width:4px; height:100%; background:#2563EB; }
+.note.n2 .bar { background:#16A34A; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg class="wave" viewBox="0 0 1280 720" preserveAspectRatio="none">
+    <path d="M0,450 Q100,400 200,460 T400,440 T600,470 T800,420 T1000,450 T1280,430 L1280,720 L0,720 Z" fill="#2563EB" opacity="0.3"/>
+    <path d="M0,480 Q120,440 240,490 T480,470 T720,500 T960,460 T1280,480 L1280,720 L0,720 Z" fill="#16A34A" opacity="0.25"/>
+    <path d="M0,510 Q140,480 280,520 T560,500 T840,530 T1120,490 T1280,510 L1280,720 L0,720 Z" fill="#EA580C" opacity="0.2"/>
+  </svg>
+  <div class="line"></div>
+  <div class="venue">{{VENUE}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+</div>
+</body>
+</html>

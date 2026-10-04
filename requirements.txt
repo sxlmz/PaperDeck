@@ -1,0 +1,26 @@
+# Agent 系统（论文 -> PPT 多 Agent 流水线）
+langgraph>=1.2.6
+langchain-core>=1.4.7
+openai>=2.43.0
+python-dotenv>=1.2.2
+
+# 基础能力
+pymupdf>=1.24
+pillow>=10
+
+# 缓存层（解析结果 / LLM 结果 / VLM 结果，db2 + p2p: 前缀）
+redis>=5.0
+
+# HTML 真源流水线（P2P_HTML_SOURCE=1）—— 缺这些会在跑到一半才炸
+playwright>=1.40          # html_preview.render_pngs / html2pptx.extract_layout
+lxml>=5.0                 # html_fixer / sandbox 的 HTML 解析
+
+# RAG 检索（rag_index / rag_search）—— numpy 必须显式列出：
+# rag_search.py 在模块级 import 它，今天只是靠 matplotlib 传递依赖，
+# 一旦不装 matplotlib，RAG 会在被 try/except 兜住之前就 ImportError
+numpy>=1.26
+rank_bm25>=0.2.2          # BM25 通道
+jieba>=0.42               # 中文分词（BM25 tokenizer）
+
+# 可选：外挂 YAML 主题（paper2ppt/themes.py: load_yaml_theme）
+pyyaml>=6.0

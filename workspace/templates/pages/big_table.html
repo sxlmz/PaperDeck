@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; }
+
+/* 整页用 **flex 纵向流**，没有任何绝对定位参与排版。
+   教训（两轮都栽在同一件事上）：
+     1) 结论固定在 top:206px、表格固定在 top:322px —— 结论换行就压住表格；
+     2) 改为「lead 绝对定位 + mid 绝对定位」后，lead 换两行又压住结论。
+   只要"高度可变"的块配"位置写死"的坐标，撞车就是必然。
+   flex 下每块按内容占位、表格吃掉剩余空间，结构上不可能重叠。 */
+.slide {
+  position:relative; width:1280px; height:720px; overflow:hidden;
+  background:#EEF2F7; color:#1E293B;
+  display:flex; flex-direction:column;
+  padding:44px 72px 34px 84px;
+}
+.slide::before {
+  content:""; position:absolute; left:0; top:0; width:100%; height:100%;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(37,99,235,.06) 0, transparent 40%),
+    radial-gradient(circle at 92% 90%, rgba(14,165,233,.05) 0, transparent 40%);
+  pointer-events:none;
+}
+.kicker { position:relative; flex:0 0 auto; font-size:17px;
+  letter-spacing:6px; color:#0284C7; font-weight:700; }
+.title { position:relative; flex:0 0 auto; margin-top:18px; max-width:1110px;
+  font-size:37px; font-weight:800; color:#0F172A; line-height:1.25; }
+.lead { position:relative; flex:0 0 auto; margin-top:24px; max-width:1120px;
+  font-size:22px; font-weight:700; color:#1D4ED8; line-height:1.4; }
+/* 中部：结论在上、表格在下，二者在同一个 flex 列里先后排列 */
+.mid {
+  position:relative; flex:1 1 auto; min-height:0; margin-top:20px;
+  display:flex; flex-direction:column; gap:10px;
+}
+.concl { flex:0 0 auto; }
+.concl .ci {
+  display:flex; align-items:baseline; gap:9px;
+  font-size:16px; line-height:1.5; color:#334155; margin-bottom:4px;
+}
+.concl .ci .dot {
+  flex:0 0 auto; width:6px; height:6px; border-radius:50%;
+  background:#2563EB; transform:translateY(-2px);
+}
+.concl .ci .ck { font-weight:700; color:#0F172A; }
+/* 表格区：吃掉结论以下的剩余空间；字号偏小是刻意的——
+   pptx 行高比浏览器高得多（字体度量漂移），字号大了就会被撑出画布。 */
+.table-wrap { flex:1 1 auto; min-height:0; overflow:hidden; }
+table { width:100%; border-collapse:collapse; font-size:12.5px; }
+th, td { border:1px solid #E2E8F0; padding:3px 8px; text-align:left; }
+th { background:#F1F5F9; font-weight:700; color:#334155; }
+td { color:#1E293B; }
+.tcap { padding:0 0 6px; font-size:14px; color:#64748B; font-weight:600; }
+.tbl-scroll { border-radius:14px; }
+.foot {
+  position:relative; flex:0 0 auto; margin-top:12px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:15px; color:#64748B; font-weight:600;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="kicker">{{KICKER}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="lead">{{LEAD}}</div>
+  <div class="mid">
+    <div class="concl">{{CONCL}}</div>
+    <div class="table-wrap">
+      <div class="tcap">{{TCAP}}</div>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr>{{THEAD}}</tr></thead>
+          <tbody>{{TBODY}}</tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div>{{SOURCE}}</div><div>{{PAGE}}</div></div>
+</div>
+</body>
+</html>

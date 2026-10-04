@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#F5F5F0; }
+.kicker { position:absolute; left:60px; top:36px; font-size:14px; color:#64748B; letter-spacing:3px;  white-space: nowrap;}
+.title { position:absolute; left:60px; top:60px; width:1160px; font-size:32px; font-weight:800; color:#0F172A; }
+.subtitle { position:absolute; left:60px; top:118px; width:1160px; font-size:19px; color:#64748B; font-style:italic; }
+.chart-card { position:absolute; left:60px; top:160px; width:1160px; height:430px;
+  background:#F5F5F0; border-top:3px solid #2563EB; padding:20px; }
+.chart-card .ctitle { font-size:19px; font-weight:700; color:#0F172A; text-align:center; margin-bottom:12px; }
+.chart-card .chart { flex:1; }
+.chart-card .cap { font-size:16px; color:#64748B; text-align:center; margin-top:8px; font-style:italic; }
+.note { position:absolute; left:0; top:610px; width:1280px;
+  background:#F5F5F0; border-left:4px solid #2563EB; padding: 14px 60px;
+  display:flex; gap:12px; align-items:flex-start; }
+.note .txt { font-size:19px; line-height:1.5; color:#1E293B; ; width:100%; }
+.note .bar, .summary .bar { position:absolute; left:0; top:0; width:4px; height:100%; background:#2563EB; }
+.note.n2 .bar { background:#16A34A; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="kicker">{{KICKER}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+  <div class="chart-card">
+    <div class="ctitle">{{CHART_TITLE}}</div>
+    <div class="chart">{{CHART}}</div>
+    <div class="cap">{{CAPTION}}</div>
+  </div>
+  <div class="note"><div class="txt">{{NOTE}}</div></div>
+</div>
+</body>
+</html>

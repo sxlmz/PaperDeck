@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#F5F5F0; overflow:hidden; }
+.bg { position:absolute; right:0; top:0; width:60%; height:100%; opacity:0.15; }
+.line { position:absolute; left:120px; top:220px; width:60px; height:4px; background:#2563EB; }
+.chapter-label { position:absolute; left:120px; top:250px; font-size:16px; color:#64748B; letter-spacing:2px; }
+.title { position:absolute; left:120px; top:290px; width:900px; font-size:56px; font-weight:800; color:#0F172A; }
+.subtitle { position:absolute; left:120px; top:380px; width:900px; font-size:19px; color:#475569; }
+.note .bar, .summary .bar { position:absolute; left:0; top:0; width:4px; height:100%; background:#2563EB; }
+.note.n2 .bar { background:#16A34A; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <svg class="bg" viewBox="0 0 600 720" preserveAspectRatio="none">
+    <polyline points="50,600 180,500 300,420 420,300 550,150" stroke="#2563EB" stroke-width="1.5" fill="none"/>
+    <polyline points="50,650 180,560 300,480 420,380 550,260" stroke="#16A34A" stroke-width="1.5" fill="none"/>
+    <polyline points="50,680 180,620 300,560 420,480 550,380" stroke="#EA580C" stroke-width="1.5" fill="none"/>
+    <circle cx="50" cy="600" r="5" fill="#2563EB"/><circle cx="180" cy="500" r="5" fill="#2563EB"/>
+    <circle cx="300" cy="420" r="5" fill="#2563EB"/><circle cx="420" cy="300" r="5" fill="#2563EB"/>
+    <circle cx="550" cy="150" r="5" fill="#2563EB"/>
+  </svg>
+  <div class="line"></div>
+  <div class="chapter-label">Chapter {{CHAPTER_NUM}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+</div>
+</body>
+</html>

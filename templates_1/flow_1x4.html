@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#F5F5F0; }
+.kicker { position:absolute; left:60px; top:30px; font-size:14px; color:#64748B; letter-spacing:3px;  white-space: nowrap;}
+.title { position:absolute; left:60px; top:54px; width:1160px; font-size:32px; font-weight:800; color:#0F172A; }
+.subtitle { position:absolute; left:60px; top:112px; width:1160px; font-size:19px; color:#64748B; font-style:italic; }
+.row { position:absolute; left:60px; top:160px; width:1160px;
+  display:flex; gap:20px; }
+.card { flex:1; background:#F5F5F0; padding:28px 24px; position:relative; }
+.card::before { content:""; position:absolute; left:0; top:0; width:100%; height:4px; }
+.card.c1::before { background:#2563EB; }
+.card.c2::before { background:#16A34A; }
+.card.c3::before { background:#EA580C; }
+.card.c4::before { background:#84CC16; }
+.card .no { font-size:32px; font-weight:800; margin-bottom:12px; }
+.card.c1 .no { color:#2563EB; }
+.card.c2 .no { color:#16A34A; }
+.card.c3 .no { color:#EA580C; }
+.card.c4 .no { color:#84CC16; }
+.card .ch { font-size:20px; font-weight:800; color:#0F172A; margin-bottom:16px; }
+.card ul { list-style:none; }
+.card li { font-size:19px; line-height:1.55; color:#334155; margin-bottom:10px; padding-left:14px; position:relative; }
+.card li::before { content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:#94A3B8; }
+.note .bar, .summary .bar { position:absolute; left:0; top:0; width:4px; height:100%; background:#2563EB; }
+.note.n2 .bar { background:#16A34A; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="kicker">{{KICKER}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="subtitle">{{SUBTITLE}}</div>
+  <div class="row">{{CARDS}}</div>
+</div>
+</body>
+</html>

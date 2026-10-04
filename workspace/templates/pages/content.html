@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; }
+.slide {
+  position:relative; width:1280px; height:720px; overflow:hidden;
+  background:#EEF2F7; color:#1E293B;
+}
+.slide::before {
+  content:""; position:absolute; left:0; top:0; width:100%; height:100%;
+  background:
+    radial-gradient(circle at 8% 10%, rgba(37,99,235,.06) 0, transparent 40%),
+    radial-gradient(circle at 92% 90%, rgba(14,165,233,.05) 0, transparent 40%);
+}
+.kicker { position:absolute; left:84px; top:44px; font-size:17px;
+  letter-spacing:6px; color:#0284C7; font-weight:700; }
+.title {
+  position:absolute; left:84px; top:86px; width:1110px;
+  font-size:37px; font-weight:800; color:#0F172A; line-height:1.25;
+}
+.lead {
+  position:absolute; left:84px; top:180px; width:1100px;
+  font-size:22px; font-weight:700; color:#1D4ED8; line-height:1.45;
+}
+/* ===== flex 骰子网格：卡片数量决定排布，wrap 自动换行 ===== */
+.grid {
+  position:absolute; left:84px; right:72px; top:264px; bottom:68px;
+  display:flex; flex-wrap:wrap; align-content:stretch; gap:20px;
+}
+.card {
+  display:flex; gap:16px; align-items:flex-start;
+  padding:20px 24px; border-left:4px solid #2563EB;
+  background:transparent; min-width:0;
+}
+/* 骰子排布：2卡=1x2 均分；3卡=3列；4卡=2x2；5卡=3+2居中；6卡=2x3 */
+.c2 .card { flex:1 1 47%; }
+.c3 .card { flex:1 1 30%; }
+.c4 .card { flex:1 1 45%; }
+.c5 .card { flex:1 1 30%; }
+.c5 .card:nth-child(4) { margin-left:15%; }
+.c5 .card:nth-child(5) { margin-right:15%; }
+.c6 .card { flex:1 1 30%; }
+/* 单卡（全页一张图/一张表）占满 */
+.c1 .card { flex:1 1 100%; }
+/* 图片卡在骰子里整行占位（c1-c4）：图+图注占一整行，避免 1/4 卡里图太小；
+   c6（2x3）时图卡保持一格，避免整行压扁图片导致裁剪/页脚重叠 */
+.grid .card.imgcard { flex:1 1 100%; }
+.grid .card.imgcard .cimg { max-height:300px; }
+/* c6（2x3）时图卡保持一格，但每行内容区仅 ~140px（grid 高 388 / 2 行 - padding），
+   图必须限到 110px 内，否则撑破 grid 底部压到页脚 */
+.c6 .card.imgcard { flex:1 1 30%; }
+.c6 .card.imgcard .cimg { max-height:110px; }
+.c6 .card.imgcard .cap { display:none; }
+.card .no {
+  font-size:36px; font-weight:800; line-height:1.1; min-width:50px;
+  font-family:"Microsoft YaHei","微软雅黑",sans-serif;
+}
+/* 序号 6 色循环：蓝/绿/橙/紫/青/玫，避免全蓝单调 */
+.card:nth-child(6n+1) .no { color:#2563EB; }
+.card:nth-child(6n+2) .no { color:#16A34A; }
+.card:nth-child(6n+3) .no { color:#EA580C; }
+.card:nth-child(6n+4) .no { color:#7C3AED; }
+.card:nth-child(6n+5) .no { color:#0891B2; }
+.card:nth-child(6n+6) .no { color:#DB2777; }
+.card .ch { font-size:27px; font-weight:700; color:#0F172A; margin-bottom:8px; }
+.card .cd { font-size:24px; line-height:1.45; color:#475569; }
+/* 图片卡：图尽量大，细节可读 */
+.card .cimg { display:block; max-width:100%; max-height:420px;
+  object-fit:contain; border-radius:10px; background:#F1F5F9; }
+.card .cap { font-size:13px; color:#64748B; margin-top:6px; line-height:1.4; }
+/* 表格卡 */
+.card table { width:100%; border-collapse:collapse; font-size:13px; }
+.card th, .card td { border:1px solid #E2E8F0; padding:5px 8px; text-align:left; }
+.card th { background:#F1F5F9; font-weight:700; color:#334155; }
+.card .tcap { font-size:13px; color:#64748B; margin-bottom:6px; font-weight:600; }
+.foot {
+  position:absolute; left:84px; right:72px; bottom:32px;
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:15px; color:#64748B; font-weight:600;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="kicker">{{KICKER}}</div>
+  <div class="title">{{TITLE}}</div>
+  <div class="lead">{{LEAD}}</div>
+  <div class="grid {{GRID_CLASS}}">
+    {{CARDS}}
+  </div>
+  <div class="foot"><div>{{SOURCE}}</div><div>{{PAGE}}</div></div>
+</div>
+</body>
+</html>

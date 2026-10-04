@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>{{TITLE}}</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1280px; height:720px; overflow:hidden; }
+body { font-family:"Microsoft YaHei","微软雅黑",sans-serif; background:#FFFFFF; }
+.slide { position:relative; width:1280px; height:720px; background:#FFFFFF; }
+.topbar { position:absolute; left:0; top:0; width:1280px; height:75px; background:#002060; }
+.topbar .sec { position:absolute; left:16px; top:12px; font-size:20px; font-weight:700; color:#FFFFFF; }
+.topbar .logo { position:absolute; right:35px; top:18px; width:168px; height:37px; background:#1E3A8A; border-radius:4px; }
+.bottombar { position:absolute; left:0; bottom:0; width:1280px; height:54px; background:#F1F5F9;
+  border-top:1px solid #E2E8F0; }
+.bottombar .logo { position:absolute; right:35px; bottom:8px; width:187px; height:38px; background:#CBD5E1; border-radius:4px; }
+.body { position:absolute; left:110px; top:124px; width:1060px; font-size:16px; line-height:1.8; color:#1E293B; }
+.thanks { position:absolute; left:0; top:380px; width:1280px; text-align:center;
+  font-size:44px; font-weight:800; color:#002060; }
+.who { position:absolute; left:0; top:480px; width:1280px; text-align:center;
+  font-size:16px; color:#64748B; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="topbar"><div class="sec">{{SECTION}}</div><div class="logo"></div></div>
+  <div class="body">{{BODY}}</div>
+  <div class="thanks">谢谢观看</div>
+  <div class="who">{{WHO}}</div>
+  <div class="bottombar"><div class="logo"></div></div>
+</div>
+</body>
+</html>
